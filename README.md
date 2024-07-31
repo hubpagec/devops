@@ -11,29 +11,31 @@ Projeto de criação de um cluster Kubernetes local para estudos.
 - Goldilock
 
 ## ArgoCD
-_Procedimento de instalação:
+_Procedimento de instalação_:
 
-###Criar namespace argocd
+### Criar namespace argocd
 
-```kubectl create namespace argocd```
+```bash
+kubectl create namespace argocd
+```
 
-###Instalação como operador no Kubernetes
+### Instalação como operador no Kubernetes
 
 ```
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
 
-###Instalar ArgoCD CLI
+### Instalar ArgoCD CLI
 
-```
+```bash
 curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
 
 sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
 
 rm argocd-linux-amd64
 ```
-###Aplicar manifesto Argocd
+### Aplicar manifesto Argocd
 
-```
+```bash
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
